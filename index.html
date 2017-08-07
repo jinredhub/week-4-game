@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>New Webpage</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    	
+		<!-- everytime start of game 
+		randomly generated target number(19 - 120)
+		total score is back to zero.
+		crystal will have random number(1 - 12)
+
+		When you click crystal, it will add points to "Your total score is: score"
+		if your score mactch with taget number, shows "You won!!"wins ++.
+		if your score is above target number, shows "You lost!!"" losses ++. -->
+
+		<div>
+			<img id="crystal1" calss="crystal" src="assets/images/crystal1.png" height="100">
+			<img id="crystal2" class="crystal" src="assets/images/crystal2.png" height="100">
+			<img id="crystal3" class="crystal" src="assets/images/crystal3.png" height="100">
+			<img id="crystal4" class="crystal" src="assets/images/crystal4.png" height="100">
+		</div>
+		<div id="html">
+			<h2>targetNumber</h2>
+			<h2>totalScore</h2>
+			<h2>wins</h2>
+			<h2>losses</h2>
+		</div>
+
+		<script>
+			var targetNumber = 33;
+			var totalScore = 0;
+			var value1 = 1;
+			var value2 = 2;
+			var value3 = 4;
+			var value4 = 5;
+			var wins = 0;
+			var losses = 0;
+
+			function initializeGame() {
+				targetNumber = 33;
+				totalScore = 0;
+				crystal1 = 1;
+				crystal2 = 2;
+				crystal3 = 4;
+				crystal4 = 5;
+
+				$("#crystal1").attr("data-value", value1);
+				$("#crystal2").attr("data-value", value2);
+				$("#crystal3").attr("data-value", value3);
+				$("#crystal4").attr("data-value", value4);
+			}
+
+			function updateHtml(){
+				var html =
+					"<p>target #:" + targetNumber + "</p>" +
+					"<p>total score: " + totalScore + "</p>" +
+					"<p>wins: " + wins + "</p>" +
+					"<p>losses: " + losses + "</p>";
+				$("#html").html(html);
+			}
+
+			updateHtml();
+			initializeGame();
+
+			$(".crystal").on("click", function(){
+
+				var crystalValue = ($(this).attr("data-value"));
+				crystalValue = parseInt(crystalValue);
+
+				totalScore += crystalValue;
+				console.log(totalScore);
+
+				var html = "";
+
+				if (totalScore < targetNumber){
+					updateHtml();
+				}
+				if (totalScore > targetNumber){
+					losses++;
+					initializeGame();
+					updateHtml();
+				}
+				if (totalScore === targetNumber){
+					wins++;
+					initializeGame();
+					updateHtml();
+
+				}
+
+
+			})
+
+
+
+		</script>
+
+    </body>
+</html>
+
