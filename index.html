@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>New Webpage</title>
+        <title>Crystals Collector!</title>
+        <link rel="text/css" href="assets/css/reset.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
@@ -17,7 +18,7 @@
 		if your score is above target number, shows "You lost!!"" losses ++. -->
 
 		<div>
-			<img id="crystal1" calss="crystal" src="assets/images/crystal1.png" height="100">
+			<img id="crystal1" class="crystal" src="assets/images/crystal1.png" height="100">
 			<img id="crystal2" class="crystal" src="assets/images/crystal2.png" height="100">
 			<img id="crystal3" class="crystal" src="assets/images/crystal3.png" height="100">
 			<img id="crystal4" class="crystal" src="assets/images/crystal4.png" height="100">
@@ -40,12 +41,12 @@
 			var losses = 0;
 
 			function initializeGame() {
-				targetNumber = 33;
+				targetNumber = Math.floor((Math.random()*101)+19);
 				totalScore = 0;
-				crystal1 = 1;
-				crystal2 = 2;
-				crystal3 = 4;
-				crystal4 = 5;
+				value1 = Math.floor((Math.random()*12)+1);
+				value2 = Math.floor((Math.random()*12)+1);
+				value3 = Math.floor((Math.random()*12)+1);
+				value4 = Math.floor((Math.random()*12)+1);
 
 				$("#crystal1").attr("data-value", value1);
 				$("#crystal2").attr("data-value", value2);
@@ -55,15 +56,20 @@
 
 			function updateHtml(){
 				var html =
-					"<p>target #:" + targetNumber + "</p>" +
-					"<p>total score: " + totalScore + "</p>" +
+					"<p>target score: " + targetNumber + "</p>" +
+					"<p>your current score: " + totalScore + "</p>" +
 					"<p>wins: " + wins + "</p>" +
-					"<p>losses: " + losses + "</p>";
+					"<p>losses: " + losses + "</p>" +
+					"<p>crystal1: " + value1 + "</p>" +
+					"<p>crystal2: " + value2 + "</p>" +
+					"<p>crystal3: " + value3 + "</p>" +
+					"<p>crystal4: " + value4 + "</p>";
+
 				$("#html").html(html);
 			}
 
-			updateHtml();
 			initializeGame();
+			updateHtml();
 
 			$(".crystal").on("click", function(){
 
@@ -72,8 +78,6 @@
 
 				totalScore += crystalValue;
 				console.log(totalScore);
-
-				var html = "";
 
 				if (totalScore < targetNumber){
 					updateHtml();
