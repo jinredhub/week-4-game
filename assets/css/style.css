@@ -18,20 +18,15 @@
 #html{
 	width: 85%;
 	height: 200px;
-	/*position: absolute;*/
-	/*top: 400px;*/
 	color: white;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.4);
 	border-radius: 25px;
 	border: 5px solid white;
 	margin: 0px auto 00px auto;
 
 	font-size: 32px;
-	/*font-family: 'Passion One', cursive;*/
 	font-family: 'Press Start 2P', cursive;
 	line-height: 120%;
-
-
 }
 .indent1{
 	text-indent: 20px;
