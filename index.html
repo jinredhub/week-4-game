@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Crystals Collector!</title>
-        <link rel="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Passion+One|Press+Start+2P" rel="stylesheet">
     </head>
     <body>
     	
@@ -16,18 +18,24 @@
 		When you click crystal, it will add points to "Your total score is: score"
 		if your score mactch with taget number, shows "You won!!"wins ++.
 		if your score is above target number, shows "You lost!!"" losses ++. -->
-
-		<div>
-			<img id="crystal1" class="crystal" src="assets/images/crystal1.png" height="100">
-			<img id="crystal2" class="crystal" src="assets/images/crystal2.png" height="100">
-			<img id="crystal3" class="crystal" src="assets/images/crystal3.png" height="100">
-			<img id="crystal4" class="crystal" src="assets/images/crystal4.png" height="100">
-		</div>
-		<div id="html">
-			<h2>targetNumber</h2>
-			<h2>totalScore</h2>
-			<h2>wins</h2>
-			<h2>losses</h2>
+		<div class="bgFull">
+		<br><br>
+			<div class="bgImg">
+			<br>
+				<div class="crystalImgs">
+					<img id="crystal1" class="crystal" src="assets/images/crystal1.png" height="300">
+					<img id="crystal2" class="crystal" src="assets/images/crystal2.png" height="300">
+					<img id="crystal3" class="crystal" src="assets/images/crystal3.png" height="300">
+					<img id="crystal4" class="crystal" src="assets/images/crystal4.png" height="300">
+				</div>
+				<div id="html">
+					<h2>targetNumber</h2>
+					<h2>totalScore</h2>
+					<h2>wins</h2>
+					<h2>losses</h2>
+				</div>
+			</div>
+			
 		</div>
 
 		<script>
@@ -56,14 +64,15 @@
 
 			function updateHtml(){
 				var html =
-					"<p>target score: " + targetNumber + "</p>" +
-					"<p>your current score: " + totalScore + "</p>" +
-					"<p>wins: " + wins + "</p>" +
-					"<p>losses: " + losses + "</p>" +
-					"<p>crystal1: " + value1 + "</p>" +
-					"<p>crystal2: " + value2 + "</p>" +
-					"<p>crystal3: " + value3 + "</p>" +
-					"<p>crystal4: " + value4 + "</p>";
+					"<p class='indent1'>Click monsters to score points" + "</p>" +
+					"<p class='indent2'>target score: " + targetNumber + "</p>" +
+					"<p class='indent2'>your current score: " + totalScore + "</p>" +
+					"<p class='indent2'>wins: " + wins + "</p>" +
+					"<p class='indent2'>losses: " + losses + "</p>" ;
+					// "<p>crystal1: " + value1 + "</p>" +
+					// "<p>crystal2: " + value2 + "</p>" +
+					// "<p>crystal3: " + value3 + "</p>" +
+					// "<p>crystal4: " + value4 + "</p>";
 
 				$("#html").html(html);
 			}

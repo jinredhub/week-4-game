@@ -1,0 +1,41 @@
+.bgFull{
+	width: 100%;
+	height: 750px;
+	background-color: black;
+}
+.bgImg{
+	width: 1200px;
+	height: 600px;
+	background-image: url("../images/cave.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: 0 auto;
+}
+.crystalImgs{
+	width: 650px;
+	margin: 60px auto 0 auto;
+}
+#html{
+	width: 85%;
+	height: 200px;
+	/*position: absolute;*/
+	/*top: 400px;*/
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 25px;
+	border: 5px solid white;
+	margin: 0px auto 00px auto;
+
+	font-size: 32px;
+	/*font-family: 'Passion One', cursive;*/
+	font-family: 'Press Start 2P', cursive;
+	line-height: 120%;
+
+
+}
+.indent1{
+	text-indent: 20px;
+}
+.indent2{
+	text-indent: 100px;
+}
